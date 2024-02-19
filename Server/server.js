@@ -1,10 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRoute from "./routes/auth.js";
-import usersRoute from "./routes/users.js";
-import schoolRoute from "./routes/school.js";
-import classroomRoute from "./routes/classroom.js";
+import authRoute from "./routes/authRoutes.js";
+import usersRoute from "./routes/userRoutes.js";
+import schoolRoute from "./routes/schoolRoutes.js";
+import classroomRoute from "./routes/classroomRoute.js";
+import studentRoute from "./routes/studentRoute.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -20,6 +21,10 @@ const connect = async () => {
   }
 };
 
+mongoose.connection.on("disconnected", () => {
+  console.log("Disconnected from the database");
+});
+
 //MIDDLEWARES
 
 app.use(cors({ origin: "*" }));
@@ -31,6 +36,7 @@ app.use("/auth", authRoute);
 app.use("/users", usersRoute);
 app.use("/school", schoolRoute);
 app.use("/classroom", classroomRoute);
+app.use("/student", studentRoute);
 
 //Error handling
 app.use((error, req, res, next) => {
@@ -43,7 +49,7 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(proccess.env.PORT, () => {
+app.listen(process.env.PORT, () => {
   connect();
-  console.log(`Server is running on port ${proccess.env.PORT}`);
+  console.log(`Server is running on port ${process.env.PORT}`);
 });

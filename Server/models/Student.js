@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
 const StudentSchema = new mongoose.Schema({
-  firstName: {
+  name: {
     type: String,
     required: true,
   },
-  lastName: {
+  classroomId: {
     type: String,
     required: true,
   },
-  gradeYear: {
-    type: Number,
+  schoolId: {
+    type: String,
     required: true,
   },
 });
