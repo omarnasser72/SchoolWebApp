@@ -39,6 +39,8 @@ export const createStudent = async (req, res, next) => {
 
 export const getStudents = async (req, res, next) => {
   try {
+    if (!req.query.schoolId)
+      next(createError(400, "schoolId must be provided !"));
     if (req.query.id) {
       const student = await Student.findById(req.query.id);
       if (!student) return next(createError(400, "Student doesn't exist!"));

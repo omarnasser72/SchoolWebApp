@@ -6,7 +6,11 @@ import {
   getSchools,
   updateSchool,
 } from "../Controllers/SchoolController.js";
-import { verifySuperAdmin, verifyUser } from "../utils/jwt.js";
+import {
+  verifySuperAdmin,
+  verifyUser,
+  verifyUserOwnAccount,
+} from "../utils/jwt.js";
 const router = Express.Router();
 
 //CREATE
@@ -24,7 +28,7 @@ router.post(
 );
 
 //READ ONE SCHOOL USING ID OR ALL SCHOOLS
-router.get("/", verifyUser, getSchools);
+router.get("/", verifySuperAdmin, getSchools);
 
 //UPDATE
 router.put(

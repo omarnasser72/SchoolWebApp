@@ -11,18 +11,18 @@ export const signup = async (req, res, next) => {
       return res.status(400).json({ errors: errors.array() });
     }
     if (req.body.role !== "schoolAdmin" && req.body.role !== "superAdmin")
-      return next(createError(400, "Invalid role."));
+      return next(createError(403, "Invalid role."));
     if (req.body.role === "schoolAdmin" && !req.body.schoolId)
-      return next(createError(400, "You've to enter school id."));
+      return next(createError(403, "You've to enter school id."));
     if (req.body.role === "superAdmin" && req.body.schoolId)
       return next(
-        createError(400, "You've to remove school id as you're super admin.")
+        createError(406, "You've to remove school id as you're super admin.")
       );
 
     const usernameExist = await User.findOne({ username: req.body.username });
 
     if (usernameExist)
-      return next(createError(400, "Username already exists."));
+      return next(createError(403, "Username already exists."));
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     const newUser = new User({
       ...req.body,
@@ -30,7 +30,7 @@ export const signup = async (req, res, next) => {
     });
 
     const savedUser = await newUser.save();
-    res.status(200).json(savedUser);
+    res.status(201).json(savedUser);
   } catch (error) {
     next(error);
   }

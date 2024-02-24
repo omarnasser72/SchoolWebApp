@@ -19,7 +19,18 @@ export const verifyUser = async (req, res, next) => {
   try {
     const decoded = jwt.verify(req.cookies["accessToken"], process.env.JWT);
     //console.log("decoded: ", decoded);
-    if (!decoded) next(createError(403, "invalid token."));
+    if (!decoded) next(createError(401, "invalid token."));
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const verifyUserOwnAccount = async (req, res, next) => {
+  try {
+    const decoded = jwt.verify(req.cookies["accessToken"], process.env.JWT);
+    //console.log("decoded: ", decoded);
+    if (!decoded) next(createError(401, "invalid token."));
     if (decoded.id === req.query.id) next();
     else
       next(createError(403, "You're id doesn't match with the requested one."));
@@ -34,7 +45,7 @@ export const verifySuperAdmin = async (req, res, next) => {
     //console.log("decoded: ", decoded);
     if (!decoded) next(createError(403, "invalid token."));
     if (decoded.role === "superAdmin") next();
-    else next(createError(403, "unauthorized super admin."));
+    else next(createError(401, "unauthorized super admin."));
   } catch (error) {
     next(error);
   }
@@ -54,7 +65,7 @@ export const verifySchoolAdmin = async (req, res, next) => {
       decoded.schoolId !== req.body.schoolId &&
       decoded.schoolId !== req.query.schoolId
     )
-      next(createError(403, "unauthorized  schoolAdmin."));
+      next(createError(401, "unauthorized  schoolAdmin."));
     next();
   } catch (error) {
     next(error);
