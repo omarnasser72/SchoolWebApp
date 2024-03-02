@@ -1,6 +1,8 @@
 import Classroom from "../models/Classroom.js";
 import { createError } from "../utils/error.js";
 import { validationResult } from "express-validator";
+import {deleteStudent} from "./StudentController.js"
+import Student from "../models/Student.js";
 
 export const createClassroom = async (req, res, next) => {
   try {
@@ -21,7 +23,7 @@ export const createClassroom = async (req, res, next) => {
     });
     newClassroom.save();
 
-    res.status(200).json(newClassroom);
+    res.status(201).json(newClassroom);
   } catch (error) {
     next(error);
   }
@@ -83,6 +85,13 @@ export const deleteClassroom = async (req, res, next) => {
     if (!classroomExists)
       return next(createError(400, "Classroom doesn't exist!"));
     await Classroom.findByIdAndDelete(req.query.id);
+
+    const students = await Student.find({classroomId:req.query.id})
+
+    await Promise.all(students.map(async(student)=>{
+      await Student.findByIdAndDelete(student.id)
+      console.log(`Student ${student.name} has deleted.`);
+    }))
     res
       .status(200)
       .json(

@@ -28,7 +28,7 @@ export const createStudent = async (req, res, next) => {
     newStudent.save();
 
     res
-      .status(200)
+      .status(201)
       .json(
         `${newStudent.name} has been added to grade ${classroom.gradeYear} in classrooom ${classroom.name} in ${school.name} school.`
       );
