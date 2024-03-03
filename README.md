@@ -1,4 +1,4 @@
-#School Web App
+# School Web App
 This is a backend API for school web application.
 I built it using MVC design pattern.
 
@@ -71,11 +71,12 @@ I built it using MVC design pattern.
 
 <p><strong>getSchool</strong>this api is for getting school using id or all users, it's required that the logged user is superAdmin</p>
 
-<p>That was a brief description you can look at the api documentation to see the full description for routes and each api call</p>
+<p><br/><br/>That was a brief description you can look at the api documentation to see the full description for routes and each api call</p>
 <a href="https://documenter.getpostman.com/view/26571473/2sA2xb7Fh2">API documentation</a>
 
-<p>You can view the whole Collection here.</p>
+<p>You can view the whole Collection here.
 <a href="./School Managment APIs (Deployed).postman_collection.json">Collection</a>
+</p>
 
 <h2>Utils</h2>
 <h4>error.js</h4>
