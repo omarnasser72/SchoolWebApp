@@ -71,14 +71,6 @@ I built it using MVC design pattern.
 
 <p><strong>getSchool</strong>this api is for getting school using id or all users, it's required that the logged user is superAdmin</p>
 
-<p><br/><br/>That was a brief description you can look at the api documentation to see the full description for routes and each api call
-<a href="https://documenter.getpostman.com/view/26571473/2sA2xb7Fh2">API documentation</a>
-</p>
-
-<p>You can view the whole Collection here.
-<a href="./School Managment APIs (Deployed).postman_collection.json">Collection</a>
-</p>
-
 <h2>Utils</h2>
 <h4>error.js</h4>
 <p>exports createError function creates new object of Error and sets status and message properties with the calling ones and return the error</p>
@@ -94,3 +86,10 @@ I built it using MVC design pattern.
 <h6>verifySchoolAdmin</h6>
 <p>This middleware checks if the current logged user is schoolAdmin, if not it call createError function with status response 403 and invalid schoolAdmin message and checks if the schoolAdmin is managing classrooms or students related only to his school, if not it call createError function with status response 403 and unauthorized schoolAdmin message.</p>
 
+<p1><br/><br/>That was a brief description you can look at the api documentation to see the full description for routes and each api call
+<a href="https://documenter.getpostman.com/view/26571473/2sA2xb7Fh2">API documentation</a>
+</p1>
+
+<p1>You can view the whole Collection here.
+<a href="./School Managment APIs (Deployed).postman_collection.json">Collection</a>
+</p1>
