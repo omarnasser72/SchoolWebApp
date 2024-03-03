@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "53fe7576-7dc5-47d2-8415-28b5de91395c",
 		"name": "School Managment APIs (Deployed)",
-		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"description": "# 🚀 Get started here\n\nThis Collection contains sample requests from this \\[API\\] [https://school-apis.onrender.comEndFragment](https://school-apis.onrender.comEndFragment)\n\n#### **It contains 5 folders each one contains it's corresponding requests**",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26571473"
 	},
@@ -50,9 +50,110 @@
 								"login"
 							]
 						},
-						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` response code.  \nThe user successfully logged in. A failed POST request return `400 bad request` for **wrong password** and `400 bad request` when **username isn't found**."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Log in Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"username\": \"omar\",\r\n    \"password\": \"0000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/auth/login",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 09:59:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8596603e8a780d89-MRS"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6f-ee2bl8HMqgNfpyG6aexqBjsFtNY\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Y2I1OGI3OWYyMGU5YzlkMTUwYTZiYSIsInJvbGUiOiJzdXBlckFkbWluIiwiaWF0IjoxNzA4NTk1OTk0fQ.N20hGFBbldreq97OAmOCIw5-9nQKfEzmIGVR5r9GazI; Path=/"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "rndr-id",
+									"value": "149eca0f-c6ea-46cb"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"message\": \"omar successfully logged in which is superAdmin.\",\n    \"id\": \"65cb58b79f20e9c9d150a6ba\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Sign up",
@@ -75,7 +176,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"omar15351\",\n    \"password\": \"0000\",\n    \"role\": \"schoolAdmin\"\n}",
+							"raw": "{\n\t\"username\": \"ormanAdmin\",\n    \"password\": \"0000\",\n    \"role\": \"schoolAdmin\",\n    \"schoolId\":\"65cb5a9be0ee686376152df1\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,11 +196,56 @@
 								"signup"
 							]
 						},
-						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when registration is succeded and returns a `201 Created` response code.\n\nA failed POST request occurs when the **role in the body isn't** \"superAdmin\" or \"schoolAdmin\" return `403 forbidden` with _invalid role message_.\n\nA failed POST request occurs when the **role in the body is** \"schoolAdmin\" and t**here'sn't provided schoolId** return `403 forbidden` with _schoolId is needed message_.\n\nA failed POST request occurs in case of **role in the body is** \"superAdmin\" and **there's schoolId** return `400 bad request` with _schoolId has to be removed message_.\n\nA failed POST request occurs if **username exists** in database return `403 forbidden` with _username already exists message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Sign up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"ormanAdmin\",\n    \"password\": \"0000\",\n    \"role\": \"schoolAdmin\",\n    \"schoolId\":\"65cb5a9be0ee686376152df1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/auth/signup",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"ormanAdmin\",\n    \"password\": \"$2b$10$IEb/ro0DbVkFG4VhUXHoteHNu/Rn4t4ao/nGN7qyfkgIVeRyUYIh6\",\n    \"role\": \"schoolAdmin\",\n    \"schoolId\": \"65cb5a9be0ee686376152df1\",\n    \"_id\": \"65d9ee6f8739ee73c854c234\",\n    \"__v\": 0\n}"
+						}
+					]
 				}
-			]
+			],
+			"description": "This folder contains requests related to authentication :\n\n- **Log in**\n    \n- **Sign up**"
 		},
 		{
 			"name": "Users",
@@ -135,9 +281,59 @@
 									"value": "65cfa499411fdd9f8d14f3e7"
 								}
 							]
-						}
+						},
+						"description": "This is a PUT request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PUT request occurs when update is succeded and returns a `200 OK` or `201 Created` response code.\n\nA failed PUT request occurs if the **accessToken doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed PUT request occurs if the **role isn't** \"_superAdmin_\" return `401 unauthorized` with _unauthorized superAdmin message_.\n\nA failed PUT request occurs when the **role in the body isn't** \"_superAdmin_\" or \"_schoolAdmin_\" return `400 bad request` with _invalid role message_.\n\nA failed PUT request occurs when the **role is** \"_schoolAdmin_\" and **there'sn't provided schoolId** return `400 bad request` with _schoolId is needed message_.\n\nA failed PUT request occurs when **id doesn't exist** in database return `400 bad request` with _user doesn't exist message_.\n\nA failed PUT request occurs if **username exists** in database return `400 bad request` with _username already exists message_.\n\nA failed PUT request occurs if the **role doesn't match with the old one** return `400 bad request` with _you can't change the role message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"username\": \"ormanAdmin\",\r\n    \"password\": \"1234\",\r\n    \"role\": \"schoolAdmin\",\r\n    \"schoolId\":\"65cb5a9be0ee686376152df1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/users?id=65d9ee6f8739ee73c854c234",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65d9ee6f8739ee73c854c234"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"_id\": \"65d9ee6f8739ee73c854c234\",\r\n    \"username\": \"ormanAdmin\",\r\n    \"password\": \"$2b$10$YlgiXnNI3y.Bp2FOS937J.T5ecWvyq3RMqrQU1cy6fZ6qotUJ6lLC\",\r\n    \"role\": \"schoolAdmin\",\r\n    \"schoolId\": \"65cb5a9be0ee686376152df1\",\r\n    \"__v\": 0\r\n}"
+						}
+					]
 				},
 				{
 					"name": "Update User Own Account",
@@ -171,9 +367,60 @@
 									"value": "65cf4ef7f0569976dd961795"
 								}
 							]
-						}
+						},
+						"description": "This is a PUT request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PUT request occurs when update is succeded and returns a `200 OK` response code.\n\nA failed PUT request occurs if the **accessToken doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed PUT request occurs if the **user id doesn't match with the id in params** return `401 unauthorized` with the _requested id doesn't match with you message_.\n\nA failed PUT request occurs if the **role in the body isn't** \"_superAdmin_\" or \"_schoolAdmin_\" return `400 bad request` with _invalid role message_.\n\nA failed PUT request occurs when the **role in the body** is \"_schoolAdmin_\" and **there'sn't provided schoolId** return `400 bad request` with _schoolId is needed message_.\n\nA failed PUT request occurs if **id doesn't exist** in database return `400 bad request` with _user doesn't exist message_.\n\nA failed PUT request occurs if **username exists** in database return `400 bad request` with _username already exists message_.\n\nA failed PUT request occurs if the **role doesn't match with the old one** return `400 bad request` with _you can't change the role message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update User Own Account",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"omar\",\r\n    \"password\":\"0000\",\r\n    \"role\":\"superAdmin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/users/updateMyAccount?id=65cb58b79f20e9c9d150a6ba",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"updateMyAccount"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65cb58b79f20e9c9d150a6ba"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"65cb58b79f20e9c9d150a6ba\",\n    \"username\": \"omar\",\n    \"password\": \"$2b$10$7T6oxH14fA4Qo2ZFzqWzJ.7Ib7GiPwGUfOM9q1qBMQZiqiTspGeHa\",\n    \"role\": \"superAdmin\",\n    \"__v\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "Get User",
@@ -198,9 +445,51 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific user.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **accessToken doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **role isn't** \"_superAdmin_\" return `401 unauthorized` with _unauthorized superAdmin message_.\n\nA failed GET request when there is **id provided as a param** and there is **no user has this id** return a response with `400 bad request` and _user doesn't exist message_.\n\nA failed GET request when there are **no users exist** return a response with `400 bad request` and _There're no users in the database message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/users",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65c9de4e0ec3f02e112a48cf",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"_id\": \"65cb58b79f20e9c9d150a6ba\",\r\n        \"username\": \"omar\",\r\n        \"password\": \"$2b$10$7T6oxH14fA4Qo2ZFzqWzJ.7Ib7GiPwGUfOM9q1qBMQZiqiTspGeHa\",\r\n        \"role\": \"superAdmin\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cf4ef7f0569976dd961795\",\r\n        \"username\": \"awkafAdmin\",\r\n        \"password\": \"$2b$10$VxL89xQ8rJMVzNeHszq4O.Gprw0kQKEXUEYV357zn.cc7wb5hys56\",\r\n        \"role\": \"schoolAdmin\",\r\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cf89eaadebaead36a31ef4\",\r\n        \"username\": \"omar121\",\r\n        \"password\": \"$2b$10$RHtJ.Ct1TFu4iafR.WaQKejLMF6zlxSQJ7pwdN7NKYlCl/L3u4dJ2\",\r\n        \"role\": \"schoolAdmin\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cfa41ef70ef8eadf6ea6c4\",\r\n        \"username\": \"omar1551\",\r\n        \"password\": \"$2b$10$T8z2gSQFbLzE21RpjWgv0uGth6wuugwxBJ5vN41obPBLOmdGIMyUC\",\r\n        \"role\": \"superAdmin\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cfa499411fdd9f8d14f3e7\",\r\n        \"username\": \"omar22\",\r\n        \"password\": \"$2b$10$IPNbm8u45AVH0owfzUL91.SGALkjf3cK2p6wqZWipvncIRriRSmC.\",\r\n        \"role\": \"superAdmin\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cfa4d61ad8595629851c44\",\r\n        \"username\": \"omar1551\",\r\n        \"password\": \"$2b$10$Yxit8aQlDmksKcBA.07/KuLIRScJMknu0LIMQ59UzYE7wuh6h4h3a\",\r\n        \"role\": \"superAdmin\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cfa50a65ed984545b6ef3b\",\r\n        \"username\": \"omar1551\",\r\n        \"password\": \"$2b$10$GNU2KFq93k.s7tQUmUt4Quf32gbjcbAjYLl15TktB.fys1eQ.DfOK\",\r\n        \"role\": \"superAdmin\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65d9ee6f8739ee73c854c234\",\r\n        \"username\": \"ormanAdmin\",\r\n        \"password\": \"$2b$10$YlgiXnNI3y.Bp2FOS937J.T5ecWvyq3RMqrQU1cy6fZ6qotUJ6lLC\",\r\n        \"role\": \"schoolAdmin\",\r\n        \"schoolId\": \"65cb5a9be0ee686376152df1\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65d9eeb18739ee73c854c237\",\r\n        \"username\": \"ormanAdmin2\",\r\n        \"password\": \"$2b$10$7AbS9Pp6.0CTfzACrWRccudxeEkZnd7lJfYGa/RA1WOjjf6g1Qt6O\",\r\n        \"role\": \"schoolAdmin\",\r\n        \"schoolId\": \"65cb5a9be0ee686376152df1\",\r\n        \"__v\": 0\r\n    }\r\n]"
+						}
+					]
 				},
 				{
 					"name": "Delete User",
@@ -208,7 +497,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://school-apis.onrender.com/users?id=65cf844c619ea7a60dbe1a34",
+							"raw": "https://school-apis.onrender.com/users?id=65cfa41ef70ef8eadf6ea6c4",
 							"protocol": "https",
 							"host": [
 								"school-apis",
@@ -221,14 +510,56 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "65cf844c619ea7a60dbe1a34"
+									"value": "65cfa41ef70ef8eadf6ea6c4"
 								}
 							]
-						}
+						},
+						"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific user.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request occurs if the role isn't \"superAdmin\" return `401 unauthorized` with _unauthorized superAdmin message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no user has this id** return a response with `400 bad request` and _user doesn't exist message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/users?id=65cf844c619ea7a60dbe1a34",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65cf844c619ea7a60dbe1a34"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "\"omar1551 has deleted successfully.\""
+						}
+					]
 				}
-			]
+			],
+			"description": "This folder contains requests related to managing users which is related to superAdmin:\n\n- **Update User**\n    \n- **Update User Own Account -> any user can call it**\n    \n- **Get User**\n    \n- **Delete User**"
 		},
 		{
 			"name": "School",
@@ -240,7 +571,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"\"\r\n}",
+							"raw": "{\r\n    \"name\":\"orman2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,9 +589,53 @@
 							"path": [
 								"school"
 							]
-						}
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when school is created successfully and returns a `201 Created` response code.\n\nA failed POST request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed POST request occurs if the **role isn't** \"_superAdmin_\" return `401 unauthorized` with _unauthorized superAdmin message_.\n\nA failed POST request occurs if **name exists** in database return `400 bad request` with _school name already exists message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create School",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"elsaeidya\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/school",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"school"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"elsaeidya\",\n    \"_id\": \"65d9f07e8739ee73c854c244\",\n    \"__v\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "Update School",
@@ -269,7 +644,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"updated ramses\"\r\n}",
+							"raw": "{\r\n    \"name\":\"elsaeedya\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -277,7 +652,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://school-apis.onrender.com/school?id=65cb4cd132cae28ef3d74e19",
+							"raw": "https://school-apis.onrender.com/school?id=65d9f07e8739ee73c854c244",
 							"protocol": "https",
 							"host": [
 								"school-apis",
@@ -290,12 +665,60 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "65cb4cd132cae28ef3d74e19"
+									"value": "65d9f07e8739ee73c854c244"
 								}
 							]
-						}
+						},
+						"description": "This is a PUT request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PUT request occurs when update is succeded and returns a `200 OK` or `201 Created` response code.\n\nA failed PUT request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed PUT request occurs if the **role isn't** \"_superAdmin_\" return `401 unauthorized` with _unauthorized superAdmin message._\n\nA failed PUT request occurs when **id doesn't exists** in database return `400 bad request` with _school doesn't exist message._\n\nA failed PUT request occurs if **name exists** in database return `400 bad request` with _school name already exists message._"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update School",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"elsaeedya\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/school?id=65d9f07e8739ee73c854c244",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"school"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65d9f07e8739ee73c854c244"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"65d9f07e8739ee73c854c244\",\n    \"name\": \"elsaeedya\",\n    \"__v\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "Get School",
@@ -320,9 +743,51 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **accessToken doesn't exist** return `403 forbidden` with _invalid token message_.\n\nA failed GET request occurs if the **role isn't** \"_superAdmin_\" return `401 unauthorized` with _unauthorized superAdmin message_.\n\nA failed GET request when there is **id provided as a param** and there is **no school has this id** return a response with `400 bad request` and _school doesn't exist message_.\n\nA failed GET request when there are **no schools exist** return a response with `400 bad request` and _There're no schools in the database message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get School",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/school",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"school"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65cb4cd132cae28ef3d74e19",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"_id\": \"65cb4eff3ab1cb1d08f416ed\",\r\n        \"name\": \"ramses\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cb59844b70d88a7cb9192a\",\r\n        \"name\": \"awkaf\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cb5a9be0ee686376152df1\",\r\n        \"name\": \"orman\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65d9f07e8739ee73c854c244\",\r\n        \"name\": \"elsaeedya\",\r\n        \"__v\": 0\r\n    }\r\n]"
+						}
+					]
 				},
 				{
 					"name": "Delete School",
@@ -346,11 +811,51 @@
 									"value": "65cb4cd132cae28ef3d74e19"
 								}
 							]
-						}
+						},
+						"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific school.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request occurs if the role isn't \"_superAdmin_\" return `401 unauthorized` with _unauthorized superAdmin message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no school has this id** return a response with `400 bad request` and _user doesn't exist message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Delete School",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/school?id=65d9f6c2a2e8e26a858f97fb",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"school"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65d9f6c2a2e8e26a858f97fb"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "\"{\\n  _id: new ObjectId('65d9f6c2a2e8e26a858f97fb'),\\n  name: 'orman2',\\n  __v: 0\\n} has deleted successfully.\""
+						}
+					]
 				}
-			]
+			],
+			"description": "This folder contains requests related to managing schools which is related to superAdmin:\n\n- **Create School**\n    \n- **Update School**\n    \n- **Get School -> any user can call it**\n    \n- **Delete School**"
 		},
 		{
 			"name": "Classroom",
@@ -380,9 +885,53 @@
 							"path": [
 								"classroom"
 							]
-						}
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when classroom is created successfully and returns a `201 Created` response code.\n\nA failed POST request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed POST request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed POST request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed POST request occurs if **name exists** in database return `400 bad request` with _dupliacted classroom message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Classroom",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"H\",\r\n    \"gradeYear\":15,\r\n    \"schoolId\":\"65cb59844b70d88a7cb9192a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/classroom",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"classroom"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"name\": \"H\",\r\n    \"gradeYear\": 11,\r\n    \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n    \"_id\": \"65e2a4feec2f6050b4212f70\"\r\n}"
+						}
+					]
 				},
 				{
 					"name": "Update Classroom",
@@ -419,9 +968,55 @@
 									"value": "65cf59b539b31090e25ffb13"
 								}
 							]
-						}
+						},
+						"description": "This is a PUT request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PUT request occurs when update is succeded and returns a `200 OK` or `201 Created` response code.\n\nA failed PUT request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed PUT request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed PUT request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed PUT request occurs if the **schoolId in the body doesn't match with one in the params** return `400 bad request` with _can't change schoolId message_\n\nA failed PUT request occurs if **name exists** in database return `400 bad request` with duplicated _classroom message._"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update Classroom",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"A\",\r\n    \"gradeYear\":\"1\",\r\n    \"schoolId\":\"65cb59844b70d88a7cb9192a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/classroom?schoolId=65cb59844b70d88a7cb9192a&id=65e2a4feec2f6050b4212f70",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"classroom"
+									],
+									"query": [
+										{
+											"key": "schoolId",
+											"value": "65cb59844b70d88a7cb9192a"
+										},
+										{
+											"key": "id",
+											"value": "65e2a4feec2f6050b4212f70"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"_id\": \"65e2a4feec2f6050b4212f70\",\r\n    \"name\": \"A\",\r\n    \"gradeYear\": 1,\r\n    \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n    \"__v\": 0\r\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Classroom",
@@ -450,9 +1045,55 @@
 									"value": "65cb59844b70d88a7cb9192a"
 								}
 							]
-						}
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific school.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed GET request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed GET request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed GET request occurs if the **schoolId in the body doesn't match with one in the params** return `400 bad request` with _can't change schoolId message_\n\nA failed GET request when there is **id provided as a param** and there is **no classroom has this id** return a response with `400 bad request` and _classroom doesn't exist message_.\n\nA failed GET request when there are **no classrooms exist** return a response with `400 bad request` and _There're no classrooms in the database message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Classroom",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/classroom?schoolId=65cb59844b70d88a7cb9192a",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"classroom"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65cf59bd39b31090e25ffb16",
+											"disabled": true
+										},
+										{
+											"key": "schoolId",
+											"value": "65cb59844b70d88a7cb9192a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"65cf59bd39b31090e25ffb16\",\n        \"name\": \"B\",\n        \"gradeYear\": 1,\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65cf59c439b31090e25ffb19\",\n        \"name\": \"C\",\n        \"gradeYear\": 1,\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65e2a4feec2f6050b4212f70\",\n        \"name\": \"A\",\n        \"gradeYear\": 1,\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Delete Classroom",
@@ -476,11 +1117,53 @@
 									"value": "65cfe5481a6e6e73698d37e1"
 								}
 							]
-						}
+						},
+						"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific classroom.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed DELETE request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no classroom has this id** return a response with `400 bad request` and _classroom doesn't exist message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Delete Classroom",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/classroom?id=65cf59c439b31090e25ffb19",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"classroom"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65cf59c439b31090e25ffb19"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "\"C in grade 1 has deleted successfully.\""
+						}
+					]
 				}
-			]
+			],
+			"description": "This folder contains requests related to managing Classrooms which is related to schoolAdmin:\n\n- **Create Classroom**\n    \n- **Update Classroom**\n    \n- **Get Classroom**\n    \n- **Delete Classroom**"
 		},
 		{
 			"name": "Student",
@@ -510,9 +1193,53 @@
 							"path": [
 								"student"
 							]
-						}
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request occurs when classroom is created successfully and returns a `201 Created` response code.\n\nA failed POST request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed POST request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed POST request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed POST request occurs if the classroomId doesn't exist return `400 bad request` with _classroom doesn't exist message._\n\nA failed POST request occurs if the schoolId doesn't exist return `400 bad request` with _school doesn't exist message._\n\nA failed POST request occurs if **name exists** in database return `400 bad request` with _dupliacted student name message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Student",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"hamada gomaa\",\r\n    \"classroomId\":\"65e2a4feec2f6050b4212f70\",\r\n    \"schoolId\":\"65cb59844b70d88a7cb9192a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/student",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"student"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "\"hamada gomaa has been added to grade 1 in classrooom A in awkaf school.\""
+						}
+					]
 				},
 				{
 					"name": "Update Student",
@@ -549,9 +1276,63 @@
 									"value": "65cfe749a6903847f356f1ca"
 								}
 							]
-						}
+						},
+						"description": "This is a PUT request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful PUT request occurs when update is succeded and returns a `200 OK` or `201 Created` response code.\n\nA failed PUT request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed PUT request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed PUT request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed PUT request occurs if the **schoolId in the body doesn't match with one in the params** return `400 bad request` with _can't change schoolId message_\n\nA failed PUT request occurs if **name exists** in database return `400 bad request` with duplicated _student message._"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update Student",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ahmed gomaa\",\r\n    \"classroomId\":\"65e2a4feec2f6050b4212f70\",\r\n    \"schoolId\":\"65cb59844b70d88a7cb9192a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://school-apis.onrender.com/student?schoolId=65cb59844b70d88a7cb9192a&id=65e2a67cec2f6050b4212f7d",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"student"
+									],
+									"query": [
+										{
+											"key": "schoolId",
+											"value": "65cb59844b70d88a7cb9192a"
+										},
+										{
+											"key": "id",
+											"value": "65e2a67cec2f6050b4212f7d"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"65e2a67cec2f6050b4212f7d\",\n    \"name\": \"ahmed gomaa\",\n    \"classroomId\": \"65e2a4feec2f6050b4212f70\",\n    \"schoolId\": \"65cb59844b70d88a7cb9192a\",\n    \"__v\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Student",
@@ -571,18 +1352,64 @@
 							],
 							"query": [
 								{
-									"key": "schoolId",
-									"value": "65cb59844b70d88a7cb9192a"
-								},
-								{
 									"key": "id",
 									"value": "65cf7084ea08481bd1697024",
 									"disabled": true
+								},
+								{
+									"key": "schoolId",
+									"value": "65cb59844b70d88a7cb9192a"
 								}
 							]
-						}
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters id to get specific student.\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed GET request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message._\n\nA failed GET request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed GET request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed GET request occurs if the **schoolId didn't provide in the params** return `400 bad request` with _schoolId have to be provided message_.\n\nA failed GET request occurs if the **schoolId in the body doesn't match with one in the params** return `400 bad request` with _can't change schoolId message_\n\nA failed GET request when there is **id provided as a param** and there is **no classroom has this id** return a response with `400 bad request` and _student doesn't exist message_.\n\nA failed GET request when there are **no classrooms exist** return a response with `400 bad request` and _There're no students in the database message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Student",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/student?schoolId=65cb59844b70d88a7cb9192a",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"student"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "65cf7084ea08481bd1697024",
+											"disabled": true
+										},
+										{
+											"key": "schoolId",
+											"value": "65cb59844b70d88a7cb9192a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"_id\": \"65cfe1eb2af9666a88109298\",\r\n        \"name\": \"ahmed tarek\",\r\n        \"classroomId\": \"65cf59bd39b31090e25ffb16\",\r\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cfe684a6903847f356f1c1\",\r\n        \"name\": \"ahmed\",\r\n        \"classroomId\": \"65cf59bd39b31090e25ffb16\",\r\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65cfe749a6903847f356f1ca\",\r\n        \"name\": \"ahmed maher\",\r\n        \"classroomId\": \"65cf59bd39b31090e25ffb16\",\r\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"_id\": \"65e2a67cec2f6050b4212f7d\",\r\n        \"name\": \"ahmed gomaa\",\r\n        \"classroomId\": \"65e2a4feec2f6050b4212f70\",\r\n        \"schoolId\": \"65cb59844b70d88a7cb9192a\",\r\n        \"__v\": 0\r\n    }\r\n]"
+						}
+					]
 				},
 				{
 					"name": "Delete Student",
@@ -610,11 +1437,57 @@
 									"value": "65cf745659498c002d3aa7a2"
 								}
 							]
-						}
+						},
+						"description": "This is a DELETE request and it is used to \"delete\" data from an endpoint. There is no request body for a DELETE request, but you can use query parameters id to delete specific student.\n\nA successful DELETE response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.\n\nA failed DELETE request occurs if the **accessToken** doesn't exist return `403 forbidden` with _invalid token message_.\n\nA failed DELETE request occurs if the **role isn't** \"_schoolAdmin_\" return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed GET request occurs if the **schoolId didn't provide in the params** return `400 bad request` with _schoolId have to be provided message_.\n\nA failed DELETE request occurs if the **current logged user isn't admin in the requested school** return `401 unauthorized` with _unauthorized schoolAdmin message_.\n\nA failed DELETE request when there is **id provided as a param** and there is **no student has this id** return a response with `400 bad request` and _student doesn't exist message_."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Delete Student",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://school-apis.onrender.com/student?schoolId=65cb59844b70d88a7cb9192a&id=65cfe749a6903847f356f1ca",
+									"protocol": "https",
+									"host": [
+										"school-apis",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"student"
+									],
+									"query": [
+										{
+											"key": "schoolId",
+											"value": "65cb59844b70d88a7cb9192a"
+										},
+										{
+											"key": "id",
+											"value": "65cfe749a6903847f356f1ca"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "\"ahmed maher in grade 1 in classroom B in awkaf has deleted successfully.\""
+						}
+					]
 				}
-			]
+			],
+			"description": "This folder contains requests related to managing Students which is related to schoolAdmin:\n\n- **Create Student**\n    \n- **Update Student**\n    \n- **Get Student**\n    \n- **Delete Student**"
 		}
 	],
 	"event": [
