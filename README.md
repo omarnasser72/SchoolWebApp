@@ -87,7 +87,7 @@ I built it using MVC design pattern.
 <p>This middleware checks if the current logged user is schoolAdmin, if not it call createError function with status response 403 and invalid schoolAdmin message and checks if the schoolAdmin is managing classrooms or students related only to his school, if not it call createError function with status response 403 and unauthorized schoolAdmin message.</p>
 
 <h2>Documentation</h2>
-<h3><br/><br/>That was a brief description you can look at the api documentation to see the full description for routes and each api call
+<h3>That was a brief description you can look at the api documentation to see the full description for routes and each api call
 <a href="https://documenter.getpostman.com/view/26571473/2sA2xb7Fh2">API documentation</a>
 </h3>
 
