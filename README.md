@@ -71,8 +71,9 @@ I built it using MVC design pattern.
 
 <p><strong>getSchool</strong>this api is for getting school using id or all users, it's required that the logged user is superAdmin</p>
 
-<p><br/><br/>That was a brief description you can look at the api documentation to see the full description for routes and each api call</p>
+<p><br/><br/>That was a brief description you can look at the api documentation to see the full description for routes and each api call
 <a href="https://documenter.getpostman.com/view/26571473/2sA2xb7Fh2">API documentation</a>
+</p>
 
 <p>You can view the whole Collection here.
 <a href="./School Managment APIs (Deployed).postman_collection.json">Collection</a>
